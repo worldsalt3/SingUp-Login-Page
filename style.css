@@ -3,3 +3,107 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    background-color: #1d84e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+p {
+    padding-top: 20px;
+    color: #5f5d5d;
+}
+
+header {
+    padding-bottom: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    max-width: 100%;
+    width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px 0 10px 0;
+    box-shadow:  #272424;
+    padding-bottom: 20px;
+}
+
+.form-control {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.firstName, .lastName {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #f3efef;
+    background-color: #f3efef;
+    border-radius: 5px;
+}
+
+.firstNameDiv, .lastNameDiv {
+    display: inline-block;
+    width: 49.5%;
+}
+
+.firstNameDiv {
+    margin-top: 20px;
+}
+
+.email, .password, .confirmPassword {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #f3efef;
+    background-color: #f3efef;
+    border-radius: 5px;
+}
+
+.form-control.success input {
+    border: 2px solid#2ecc71;
+}
+
+.form-control.error input {
+    border: 2px solid #e74c3c;
+}
+
+.form-control.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    visibility: hidden;
+}
+
+.checkbox {
+    margin-top: 20px;
+    
+}
+
+label {
+    color: #5f5d5d;
+}
+
+span {
+    color: #0f82ee;
+}
+
+.button {
+    display: block;
+    margin-top: 20px;
+    background-color: #1d84e4;
+    color: #ffffff;
+    padding: 10px 30px;
+    border: 1px solid #1d84e4;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+}

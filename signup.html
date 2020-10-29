@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main class="container">
+        <header>
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account!</p>
+        </header>
+        <form action="#" method="GET" id="form">
+            <div class="form-control firstNameDiv">
+                <input type="text" placeholder="First Name" class="firstName" id="firstName">
+                <small>Error message</small>
+            </div>
+            <div class="form-control lastNameDiv">
+                <input type="text" placeholder="Last Name" class="lastName" id="lastName">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <input type="email" placeholder="Email" class="email" id="email">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <input type="password" placeholder="Password" class="password" id="password">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <input type="password" placeholder="Confirm Password" class="confirmPassword" id="confirmPassword">
+                <small>Error message</small>
+            </div>
+            <label for="checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" class="checkbox" required> 
+                I accept the <span>Term of Use</span> & <span>Privacy Policy</span>.
+            </label>
+            <button type="submit" class="button" disabled>Sign Up</button>
+        </form>
+    </main>
 </body>
 <script src="script.js"></script>
 </html>
