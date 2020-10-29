@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main class="container">
+        <header>
+            <h1>Welcome!</h1>
+            <p>Enter Details to Login</p>
+        </header>
+        <form action="login.html" method="GET" id="form">
+            <div class="form-control">
+                <input type="email" placeholder="Email" class="email" id="loginEmail">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <input type="password" placeholder="Password" class="password" id="loginPassword">
+                <small>Error message</small>
+            </div>
+            <button type="submit" class="button" id="login">Login</button>
+        </form>
+    </main>
 </body>
 <script src="script.js"></script>
 </html>

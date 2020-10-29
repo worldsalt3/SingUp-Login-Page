@@ -6,11 +6,14 @@ const confirmPassword = document.getElementById('confirmPassword');
 const checkbox = document.getElementById('checkbox');
 const signUpButton = document.getElementById('signUp');
 const form = document.getElementById('form');
+const loginEmail = document.getElementById('loginEmail');
+const loginPassword = document.getElementById('loginPassword');
+const loginButton = document.getElementById('login');
 
+signUpButton.disabled = true;
+console.log(loginEmail)
 
-
-
-let eventFirstName = firstName.addEventListener('blur', (e) => {
+firstName.addEventListener('blur', (e) => {
     e.preventDefault();
     validateFirstName();
 })
@@ -36,6 +39,16 @@ confirmPassword.addEventListener('blur', (e) => {
     validateConfirmPassword();
 })
 
+loginEmail.addEventListener('blur', (e) => {
+    e.preventDefault();
+    validateLoginEmail();
+})
+
+loginPassword.addEventListener('blur', (e) => {
+    e.preventDefault();
+    validateLoginPassword();
+})
+
 const validateFirstName = () => {
     
     const firstNameValue = firstName.value.trim();
@@ -44,9 +57,10 @@ const validateFirstName = () => {
         errorMessage(
           firstName,
           'First Name cannot be blank (First Name can accept any character except numbers)'
-        )
+        );
+        
     } else if (isValidName(firstNameValue)) {
-        errorMessage(firstName, 'First Name accept any character except numbers')
+        errorMessage(firstName, 'First Name accept any character except numbers');
     } else {
         success(firstName);
     }
@@ -86,7 +100,7 @@ const validatePassword = () => {
   const passwordValue = password.value.trim()
   
   if (passwordValue == '') {
-    errorMessage(password, 'Password cannot be blank')
+    errorMessage(password, 'Password cannot be blank');
   } else if (!isValidPassword(passwordValue)) {
     errorMessage(password, 'Password should be 8 characters long')
   } else {
@@ -105,8 +119,34 @@ const validateConfirmPassword = () => {
     } else if (passwordValue !== confirmPasswordValue) {
       errorMessage(confirmPassword, 'Password does not match')
     } else {
-      success(confirmPassword)
+      signUpButton.disabled = false;
+      success(confirmPassword);
     }
+}
+
+const validateLoginEmail = () => {
+    const loginEmailValue = loginEmail.value.trim();
+
+    if (loginEmailValue == '') {
+        errorMessage(loginEmail, 'Email cannot be blank');
+    } else if (!isEmail) {
+        errorMessage(loginEmail, 'Not a valid Email');
+    } else {
+        success(loginEmail);
+    }    
+}
+
+const validateLoginPassword = () => {
+    const loginPasswordValue = loginPassword.value.trim();
+
+    
+  if (loginPasswordValue == '') {
+    errorMessage(loginPassword, 'Password cannot be blank')
+  } else if (!isValidPassword(loginPasswordValue)) {
+    errorMessage(loginPassword, 'Password should be 8 characters long')
+  } else {
+    success(loginPassword);
+  }
 }
 
 const errorMessage = (input, message) => {
