@@ -6,12 +6,10 @@ const confirmPassword = document.getElementById('confirmPassword');
 const checkbox = document.getElementById('checkbox');
 const signUpButton = document.getElementById('signUp');
 const form = document.getElementById('form');
-// // const loginEmail = document.getElementById('loginEmail');
-// const loginPassword = document.getElementById('loginPassword');
-const loginButton = document.getElementById('login');
+
 
 signUpButton.disabled = true;
-// console.log(loginEmail)
+
 
 
 const validateFirstName = () => {
@@ -89,31 +87,6 @@ const validateConfirmPassword = () => {
     }
 }
 
-const validateLoginEmail = () => {
-    const loginEmailValue = loginEmail.value.trim();
-
-    if (loginEmailValue == '') {
-        errorMessage(loginEmail, 'Email cannot be blank');
-    } else if (!isEmail) {
-        errorMessage(loginEmail, 'Not a valid Email');
-    } else {
-        success(loginEmail);
-    }    
-}
-
-const validateLoginPassword = () => {
-    const loginPasswordValue = loginPassword.value.trim();
-
-    
-  if (loginPasswordValue == '') {
-    errorMessage(loginPassword, 'Password cannot be blank')
-  } else if (!isValidPassword(loginPasswordValue)) {
-    errorMessage(loginPassword, 'Password should be 8 characters long')
-  } else {
-    success(loginPassword);
-  }
-}
-
 const errorMessage = (input, message) => {
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
@@ -180,12 +153,3 @@ if (
   signUpButton.disabled = false
 }
 
-// loginEmail.addEventListener('blur', (e) => {
-//   e.preventDefault()
-//   validateLoginEmail()
-// })
-
-// loginPassword.addEventListener('blur', (e) => {
-//   e.preventDefault()
-//   validateLoginPassword()
-// })
