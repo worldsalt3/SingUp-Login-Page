@@ -1,18 +1,20 @@
 const loginEmail = document.getElementById('loginEmail');
 const loginPassword = document.getElementById('loginPassword');
 const loginButton = document.getElementById('login');
+const form = document.getElementById('form');
 
 loginButton.disabled = true;
+
 
 const validateLoginEmail = () => {
   const loginEmailValue = loginEmail.value.trim();
 
   if (loginEmailValue == '') {
-    errorMessage(loginEmail, 'Email cannot be blank')
-  } else if (!isEmail) {
-    errorMessage(loginEmail, 'Not a valid Email')
+    errorMessage(loginEmail, 'Email cannot be blank');
+  } else if (isEmail(loginEmailValue)) {
+    errorMessage(loginEmail, 'Not a valid Email');
   } else {
-    success(loginEmail)
+    success(loginEmail);
   }
 }
 
@@ -24,50 +26,48 @@ const validateLoginPassword = () => {
   } else if (!isValidPassword(loginPasswordValue)) {
     errorMessage(loginPassword, 'Password should be 8 characters long')
   } else {
-    success(loginPassword)
+    success(loginPassword);
   }
 }
 
 const errorMessage = (input, message) => {
-  const formControl = input.parentElement
-  const small = formControl.querySelector('small')
-  formControl.className = 'form-control error'
-  small.innerText = message
+  const formControl = input.parentElement;
+  const small = formControl.querySelector('small');
+  formControl.className = 'form-control error';
+  small.innerText = message;
 }
 
 const success = (input) => {
   const formControl = input.parentElement
-  formControl.className = 'form-control success'
+  formControl.className = 'form-control success';
 }
 
-const isEmail = (email) => {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  )
+const isEmail = (loginEmail) => {
+    mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+    return loginEmail.match(mailformat);
+
 }
 
 const isValidPassword = (password) => {
   if (password.length < 8) {
-    return false
+    return false;
   } else {
-    return true
+    return true;
   }
 }
 
 
-let firstValidation = loginEmail.addEventListener('blur', (e) => {
+let emailValidation = loginEmail.addEventListener('blur', (e) => {
   e.preventDefault();
   validateLoginEmail();
 })
 
-let secondValidation = loginPassword.addEventListener('blur', (e) => {
+
+let passwordValidation = loginPassword.addEventListener('blur', (e) => {
   e.preventDefault();
   validateLoginPassword();
 })
 
-if (
-  firstValidation &&
-  secondValidation
-) {
-  signUpButton.disabled = false
+if (emailValidation && passwordValidation) {
+  loginButton.disabled = false;
 }

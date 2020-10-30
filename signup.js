@@ -51,10 +51,10 @@ const validateEmail = () => {
     
     if (emailValue == '') {
         errorMessage(email, 'Email cannot be blank');
-    } else if (!isEmail) {
-        errorMessage(email, 'Not a valid Email');
+    } else if (!isEmail(emailValue)) {
+      errorMessage(email, 'Not a valid Email')
     } else {
-        success(email);
+      success(email);
     }
 }
 
