@@ -13,41 +13,6 @@ const loginButton = document.getElementById('login');
 signUpButton.disabled = true;
 console.log(loginEmail)
 
-firstName.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validateFirstName();
-})
-
-
-lastName.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validateLastName();
-})
-
-email.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validateEmail();
-})
-
-password.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validatePassword();
-})
-
-confirmPassword.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validateConfirmPassword();
-})
-
-loginEmail.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validateLoginEmail();
-})
-
-loginPassword.addEventListener('blur', (e) => {
-    e.preventDefault();
-    validateLoginPassword();
-})
 
 const validateFirstName = () => {
     
@@ -179,3 +144,38 @@ const isValidPassword = (password) => {
         return true;
     }
 }
+
+firstName.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validateFirstName()
+})
+
+lastName.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validateLastName()
+})
+
+email.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validateEmail()
+})
+
+password.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validatePassword()
+})
+
+confirmPassword.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validateConfirmPassword()
+})
+
+loginEmail.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validateLoginEmail()
+})
+
+loginPassword.addEventListener('blur', (e) => {
+  e.preventDefault()
+  validateLoginPassword()
+})
