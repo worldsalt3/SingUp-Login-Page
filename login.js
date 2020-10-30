@@ -26,7 +26,8 @@ const validateLoginPassword = () => {
   } else if (!isValidPassword(loginPasswordValue)) {
     errorMessage(loginPassword, 'Password should be 8 characters long')
   } else {
-    success(loginPassword);
+      loginButton.disabled = false
+      success(loginPassword);
   }
 }
 
