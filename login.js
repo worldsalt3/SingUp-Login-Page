@@ -46,14 +46,23 @@ const isEmail = (email) => {
   )
 }
 
+const isValidPassword = (password) => {
+  if (password.length < 8) {
+    return false
+  } else {
+    return true
+  }
+}
+
+
 let firstValidation = loginEmail.addEventListener('blur', (e) => {
-  e.preventDefault()
-  validateLoginEmail()
+  e.preventDefault();
+  validateLoginEmail();
 })
 
 let secondValidation = loginPassword.addEventListener('blur', (e) => {
-  e.preventDefault()
-  validateLoginPassword()
+  e.preventDefault();
+  validateLoginPassword();
 })
 
 if (
