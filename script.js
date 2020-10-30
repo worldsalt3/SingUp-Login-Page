@@ -6,12 +6,12 @@ const confirmPassword = document.getElementById('confirmPassword');
 const checkbox = document.getElementById('checkbox');
 const signUpButton = document.getElementById('signUp');
 const form = document.getElementById('form');
-const loginEmail = document.getElementById('loginEmail');
-const loginPassword = document.getElementById('loginPassword');
+// // const loginEmail = document.getElementById('loginEmail');
+// const loginPassword = document.getElementById('loginPassword');
 const loginButton = document.getElementById('login');
 
 signUpButton.disabled = true;
-console.log(loginEmail)
+// console.log(loginEmail)
 
 
 const validateFirstName = () => {
@@ -145,37 +145,47 @@ const isValidPassword = (password) => {
     }
 }
 
-firstName.addEventListener('blur', (e) => {
+let firstValidation = firstName.addEventListener('blur', (e) => {
   e.preventDefault()
   validateFirstName()
 })
 
-lastName.addEventListener('blur', (e) => {
+let secondValidation = lastName.addEventListener('blur', (e) => {
   e.preventDefault()
   validateLastName()
 })
 
-email.addEventListener('blur', (e) => {
+let thirdValidation = email.addEventListener('blur', (e) => {
   e.preventDefault()
   validateEmail()
 })
 
-password.addEventListener('blur', (e) => {
+let forthValidation = password.addEventListener('blur', (e) => {
   e.preventDefault()
   validatePassword()
 })
 
-confirmPassword.addEventListener('blur', (e) => {
+let fifthValidation = confirmPassword.addEventListener('blur', (e) => {
   e.preventDefault()
   validateConfirmPassword()
 })
 
-loginEmail.addEventListener('blur', (e) => {
-  e.preventDefault()
-  validateLoginEmail()
-})
+if (
+  firstValidation &&
+  secondValidation &&
+  thirdValidation &&
+  forthValidation &&
+  fifthValidation
+) {
+  signUpButton.disabled = false
+}
 
-loginPassword.addEventListener('blur', (e) => {
-  e.preventDefault()
-  validateLoginPassword()
-})
+// loginEmail.addEventListener('blur', (e) => {
+//   e.preventDefault()
+//   validateLoginEmail()
+// })
+
+// loginPassword.addEventListener('blur', (e) => {
+//   e.preventDefault()
+//   validateLoginPassword()
+// })
