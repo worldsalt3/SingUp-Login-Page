@@ -17,6 +17,11 @@ p {
     color: #5f5d5d;
 }
 
+.login-link {
+    text-align: center;
+    color: #5f5d5d;
+}
+
 header {
     padding-bottom: 20px;
 }
