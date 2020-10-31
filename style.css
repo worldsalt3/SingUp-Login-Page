@@ -28,7 +28,7 @@ header {
 
 .container {
     background-color: #ffffff;
-    max-width: 100%;
+    max-width: 50%;
     width: 600px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -51,10 +51,10 @@ header {
     border-radius: 5px;
 }
 
-.firstNameDiv, .lastNameDiv {
+/* .firstNameDiv, .lastNameDiv {
     display: inline-block;
     width: 49.5%;
-}
+} */
 
 .firstNameDiv {
     margin-top: 20px;
