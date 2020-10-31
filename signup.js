@@ -118,6 +118,16 @@ const isValidPassword = (password) => {
     }
 }
 
+const addLoader = () => {
+  const loader = document.querySelector('i');
+  loader.style.visibility = 'visible';
+  setTimeout(() => {
+    loader.style.visibility = 'hidden';
+  }, 2000);
+}
+
+
+
 let firstValidation = firstName.addEventListener('blur', (e) => {
   e.preventDefault()
   validateFirstName()
@@ -141,6 +151,11 @@ let forthValidation = password.addEventListener('blur', (e) => {
 let fifthValidation = confirmPassword.addEventListener('blur', (e) => {
   e.preventDefault()
   validateConfirmPassword()
+})
+
+signUpButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  addLoader()
 })
 
 if (

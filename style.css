@@ -93,6 +93,10 @@ header {
     
 }
 
+i {
+    visibility: hidden;
+}
+
 label {
     color: #5f5d5d;
 }
