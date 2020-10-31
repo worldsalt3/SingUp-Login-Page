@@ -51,10 +51,10 @@ header {
     border-radius: 5px;
 }
 
-/* .firstNameDiv, .lastNameDiv {
+.firstNameDiv, .lastNameDiv {
     display: inline-block;
-    width: 49.5%;
-} */
+    min-width: 100%;
+}
 
 .firstNameDiv {
     margin-top: 20px;
